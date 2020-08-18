@@ -22,9 +22,9 @@ public class CustomerReg extends HttpServlet {
 		String accno = request.getParameter("accno");
 		String uname = request.getParameter("uname");
 		String pass = request.getParameter("pass");
-		System.out.println(accno);
-		System.out.println(uname);
-		System.out.println(pass);
+//		System.out.println(accno);
+//		System.out.println(uname);
+//		System.out.println(pass);
 
 		CustomerModel cm = new CustomerModel();
 		cm.setAccount_number(accno);
