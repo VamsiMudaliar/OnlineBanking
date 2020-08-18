@@ -1,5 +1,5 @@
 package com.banking;
-
+import com.banking.Database.*;
 import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +14,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.banking.Model.AccountModel;
 @WebServlet("/CreateAccountServlet")
 public class CreateAccount extends HttpServlet  {
 	String account_no, first_name, last_name, address, city, branch, zip, username, password, re_password,
@@ -67,7 +69,17 @@ public class CreateAccount extends HttpServlet  {
 	am.setReg_date(reg_date);
 
 	if (password.equals(re_password)) {
+		boolean output;
 		request.setAttribute("Account_details", am);
+		DbOperation dbOperation = new DbOperation();
+		try {
+			output = dbOperation.insertAccountDetails(am);
+			System.out.println("insertok");
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		RequestDispatcher rd = request.getRequestDispatcher("create_account_progress.jsp");
 		rd.forward(request, response);
 
