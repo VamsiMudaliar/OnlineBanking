@@ -10,9 +10,11 @@ public class db_con {
 	public Connection getConnection() throws SQLException {
 
 	    try {
-	    	 Class.forName("com.mysql.jdbc.Driver");
+	    	 Class.forName("com.mysql.cj.jdbc.Driver");
 	         connection = DriverManager.getConnection("jdbc:mysql://localhost/bank?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-	         System.out.println("Connection successful");
+//	       String url ="jdbc:mysql://banksystem123.mysql.database.azure.com:3306/bank?useSSL=true&requireSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
+//	       Connection connection = DriverManager.getConnection(url, "Adminuser@banksystem123", "Vikas12345");
+	    	 System.out.println("Connection successful");
 	      
 	    } catch (Exception e) {
 	       System.err.println(e);

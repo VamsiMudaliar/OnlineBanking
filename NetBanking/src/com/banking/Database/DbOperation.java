@@ -17,12 +17,13 @@ public class DbOperation {
 	int count1, count2;
 
 	public boolean insertAccountDetails(AccountModel model) throws Exception {
+
 		try {
 			db_con connect = new db_con();
 			conn = connect.getConnection();
 			System.out.println("Got connection");
 
-			PreparedStatement ps1 = conn.prepareStatement("insert into account(id,f_name,l_name,address,city,"
+			PreparedStatement ps1 = conn.prepareStatement("insert into customer(id,f_name,l_name,address,city,"
 					+ "branch,zip,username,password,phone,email,account_type,reg_date) values('" + model.getAccount_no()
 					+ "','" + model.getFirst_name() + "','" + model.getLast_name() + "','" + model.getAddress() + "','"
 					+ model.getCity() + "','" + model.getBranch() + "','" + model.getZip() + "','" + model.getUsername()
@@ -40,6 +41,25 @@ public class DbOperation {
 
 		return (count1 > 0);
 	}
-
 	
+
+	public boolean customerSignup(CustomerModel model) throws Exception{
+		
+		try {
+			db_con connect = new db_con();
+			conn = connect.getConnection();
+			System.out.println("Got connection");
+			PreparedStatement ps1 = conn.prepareStatement("insert into customer(username,password,is_verified,account_number) values('" + model.getUsername()
+					+ "','" + model.getPassword()+  "','" + model.getIs_verified() + "','" + model.getAccount_number() + "')");
+			count1 = ps1.executeUpdate();
+			System.out.println("Inserted " + count1 + " row");
+
+		
+	}catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}
+		return true;
+	
+	}
 }
