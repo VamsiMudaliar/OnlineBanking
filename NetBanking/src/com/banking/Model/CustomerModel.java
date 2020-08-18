@@ -2,6 +2,13 @@ package com.banking.Model;
 
 public class CustomerModel {
 	String account_number,username,password;
+	int amount;
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int i) {
+		this.amount = i;
+	}
 	int is_verified;
 	public String getAccount_number() {
 		return account_number;
