@@ -14,7 +14,7 @@ import java.util.Date;
 import com.banking.Model.*;
 public class DbOperation {
 	Connection conn;
-	int count1, count2;
+	int count1, count2,tcount;
 
 	
 
@@ -36,5 +36,28 @@ public class DbOperation {
 	}
 		return true;
 	
+	}
+	
+		
+	public boolean insertTxnDetails(TransactionModel model) throws Exception{
+		try {
+			db_con connect = new db_con();
+			conn = connect.getConnection();
+			System.out.println("Got connection");
+			
+			PreparedStatement st = conn.prepareStatement("insert into transactions(TRANS_ID,TRANS_TYPE,AMOUNT,RECEIVER_ACCOUNT,"
+					+"DATE,TRANSACTION_STATUS,username) values('" + model.getTid() + "','" +model.getTtype() + "','" 
+					+ model.getAmount() + "','" + model.getRAccount_no() + "','" + model.getDate() + "','" +model.getStatus()
+					+ "','" +model.getUser() + "')");
+			tcount = st.executeUpdate();
+			System.out.println("Inserted " + tcount + " row into txn table" );
+			return true;
+		}
+		catch(Exception e){
+			e.printStackTrace();
+
+			return false;
+					}
+		
 	}
 }

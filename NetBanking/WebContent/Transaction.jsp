@@ -49,7 +49,11 @@
 								</div>
 								
 								<input type="submit" class="btn btn-lg btn-info">
-								</input>
+								 
+								<% if((String)request.getAttribute("output") == "false"){
+									%>
+									alert("transaction failed!!! please do it again");
+									<%} %>
 							</div>
 						</form>
 					</div>
