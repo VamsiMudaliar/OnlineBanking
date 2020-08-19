@@ -53,7 +53,17 @@ public class Login_page extends HttpServlet {
 					// Setting all variables to model class
 					cm = new CustomerModel();
 					cm.setUsername(UserName);
+					cm.setIs_verified(rs.getInt(3));
+
 					cm.setAccount_number(rs.getString(4));
+				}
+				System.out.println(cm.getIs_verified());
+
+				if (cm.getIs_verified()==0) {
+					request.setAttribute("isPassOK", "No");
+					RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+					rd.forward(request, response);
+					
 				}
 					
 					ResultSet rs1 = stmt.executeQuery("select * from bank_account where account_number ='" + cm.getAccount_number() + "'");
@@ -66,7 +76,7 @@ public class Login_page extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("userDetails", cm);
 					//so we can use User Details whenever We want from session.getAattrubute
-
+					
 					RequestDispatcher rd = request.getRequestDispatcher("Services.jsp");
 					rd.forward(request, response);
 

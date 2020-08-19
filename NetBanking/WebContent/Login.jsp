@@ -46,7 +46,7 @@
 								if (isPassOK!=null && isPassOK.equals("No")) {
 							%>
 							<div class="alert alert-danger" role="alert">
-								<strong>Account No/Password doesn't match.</strong>
+								<strong>Account Nodoesn't match /Not Verified User</strong>
 							</div>
 							<%
 								}
