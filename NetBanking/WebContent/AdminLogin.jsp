@@ -7,7 +7,11 @@
 <title>Sign In</title>
 <link rel="shortcut icon" type="image/png" href="image/favicon.png" />
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+<style type="text/css">
+input, select, textarea {
+color: red;
+}
+</style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -28,8 +32,8 @@
 							</h3>
 						</div>
 
-						<div class="panel-body">
-							<form role="form" action="Adminlogin">
+						<div class="panel-body" style="background-color:cyan">
+							<form role="form" action="Adminlogin" method="post">
 							<div class="space" style="margin-top:20px"></div>
 								<!-- <div class="alert alert-danger">Incorrect Username or
 									Password!</div> -->

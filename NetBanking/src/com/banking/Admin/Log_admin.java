@@ -8,6 +8,7 @@ import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import com.banking.Database.db_con;
 import com.banking.Model.CustomerModel;
-
+@WebServlet("/Adminlogin")
 public class Log_admin  extends HttpServlet{
 
 	
@@ -29,14 +30,19 @@ public class Log_admin  extends HttpServlet{
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		UserName = request.getParameter("UserName");
+		UserName = request.getParameter("username");
 		password = request.getParameter("password");
 
 		System.out.println(UserName);
 		System.out.println(password);
-		if (UserName=="root" && password=="123") {
+		if (UserName.equals("root") && password.equals("123")) {
+			System.out.println(UserName);
+
 			RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
 			rd.forward(request, response);
+		}else {
+			System.out.println("Notvalid");
+
 		}
 
 	}
