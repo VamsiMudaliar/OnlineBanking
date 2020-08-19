@@ -33,7 +33,48 @@
 				Connection conn = null;
 				Statement stmt = null;
 				ResultSet rs = null;
+				ResultSet r = null;
+
 				%>
+				 <!-- Modal -->
+							<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+							  <div class="modal-dialog modal-dialog-centered" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <div class="modal-body">
+							       <h4 class="alert-heading">Success!</h4>
+										<%@page import="java.sql.*,java.util.*"%>
+										<%
+										String id=request.getParameter("id");
+										System.out.println(id);
+										try
+										{
+											db_con connect = new db_con();
+										
+											Connection conn1 = connect.getConnection();
+											Statement st=conn1.createStatement();
+											int i=st.executeUpdate("DELETE FROM customer WHERE username="+id);
+											out.println(id); 
+											out.println("Data Deleted Successfully!");
+										}
+										catch(Exception e)
+										{
+										System.out.print(e);
+										e.printStackTrace();
+										}
+										%>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
@@ -56,18 +97,21 @@
 
 						 rs = stmt.executeQuery("select * from customer");
 					while(rs.next()){
+						
 					%>
                      
                     <tr>
-                        <td><%=rs.getString(1) %></td>
+                        <td><%=rs.getString(1)%></td>
                         <td><%=rs.getString(3) %></td>
                         <td><%=rs.getString(4) %></td>
-
+					
+						
                         <td>
-                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            <a href="#" class="view" title="View" data-toggle="tooltip" style="cursor: pointer" data-toggle="modal" data-target="#exampleModalCenter"><i class="material-icons">&#xE417;</i></a>
+                           <a href="Update_page.jsp?id=<%=rs.getString(1) %>"><i class="material-icons">&#xE254;</i></a>
+                            <a href="delete.jsp?id=<%=rs.getString(1) %>"><i class="material-icons">&#xE872;</i></a>
                         </td>
+                        
                     </tr>  
                     <%
 						}
@@ -75,7 +119,7 @@
 						} catch (Exception e) {
 						e.printStackTrace();
 						}
-						%>      
+						%>
                 </tbody>
             </table>
            
