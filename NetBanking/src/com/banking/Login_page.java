@@ -54,30 +54,33 @@ public class Login_page extends HttpServlet {
 					cm = new CustomerModel();
 					cm.setUsername(UserName);
 					cm.setAccount_number(rs.getString(4));
+				}
 					
-					
-					ResultSet rs1 = stmt.executeQuery("select * from Bank_table where account_number ='" + cm.getAccount_number() + "'");
+					ResultSet rs1 = stmt.executeQuery("select * from bank_account where account_number ='" + cm.getAccount_number() + "'");
 
 					while (rs1.next()) {
-						cm.setAmount(rs1.getInt(3));
+						cm.setAmount(rs1.getInt(8));
 					}
 
 					// Setting Session variable for current User
 					HttpSession session = request.getSession();
 					session.setAttribute("userDetails", cm);
+					//so we can use User Details whenever We want from session.getAattrubute
 
-					RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("Services.jsp");
 					rd.forward(request, response);
 
 				}
-			}
+			
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println("exceprtio");
+
 			e.printStackTrace();
 		}
 	}
-
 }
+
 
 

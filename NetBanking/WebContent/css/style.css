@@ -118,12 +118,13 @@ ul.top-icons {
 }
 .form-control {
     width: 100%;
+    color:black;
     padding: 0em;
     font-size: 1em;
-    color: #ffffff;
     background-color: transparent;
     border: transparent;
     border-radius: 0px;
+
 }
 i.fa.fa-search {
     color: #ffffff;

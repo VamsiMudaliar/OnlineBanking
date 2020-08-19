@@ -48,17 +48,18 @@ public class CustomerReg extends HttpServlet {
 		System.out.println(driver);
 
 		try {
+			//insertting into cusstomer Table by instatnatiating Db operation class
 			output = dbOperation.customerSignup(cm);
-			System.out.println("insertok");
+//			System.out.println("insertok");
 			sendEmail email =new sendEmail();
 //			email.sendSimpleMessage(uname, "Verification", "You have been under verification process we will let you know after yours approved",driver);
-			
+			//Go to login Page
 			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
 			rd.forward(request, response);
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-            System.out.println("okd");
+//            System.out.println("okd");
 
 			e.printStackTrace();
 		}

@@ -25,7 +25,7 @@
 					in to your account</h1>
 				<div class="row">
 					<div class="col-md-6 col-md-offset-2">
-						<form method="post" action="Login">
+						<form method="post" action="login">
 							<div class="form-group">
 								<label for="email">UserName</label> <input type="text"
 									name="UserName" required class="form-control" id="account_no"
