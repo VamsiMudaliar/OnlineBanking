@@ -6,9 +6,9 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 public class sendEmail {
-	 private final static String key="b42e705fefbd678677915de739350d9e-203ef6d0-bf189071";
+	 private final static String key="b309d1a06cbe14aef0e2405a192c13bb-203ef6d0-5100c74b";
 
-	public  JsonNode sendSimpleMessage( String tomail,String Subject,String msg) throws UnirestException {
+	public  JsonNode sendSimpleMessage( String tomail,String Subject,String msg,String key) throws UnirestException {
 		
 
         HttpResponse<JsonNode> request = Unirest.post("https://api.mailgun.net/v3/" +"vikas.social" + "/messages")
@@ -18,7 +18,7 @@ public class sendEmail {
                 .field("subject",Subject )
                 .field("text", msg)
                 .asJson();
-        	System.out.println("mail sent");
+        	System.out.println(request.getBody());
             return request.getBody();
     }
 		

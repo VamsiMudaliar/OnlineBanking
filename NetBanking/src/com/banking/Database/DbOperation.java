@@ -28,7 +28,7 @@ public class DbOperation {
 					+ "','" + model.getPassword()+  "','" + model.getIs_verified() + "','" + model.getAccount_number() + "')");
 			count1 = ps1.executeUpdate();
 			System.out.println("Inserted " + count1 + " row");
-
+				
 		
 	}catch (Exception e) {
 		// TODO: handle exception

@@ -1,8 +1,12 @@
 package com.banking;
+import java.io.*;  
 
+import javax.servlet.*;  
+import javax.servlet.http.*;  
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,14 +43,18 @@ public class CustomerReg extends HttpServlet {
 		boolean output;
 //		request.setAttribute("Account_details", am);
 		DbOperation dbOperation = new DbOperation();
-		
+	    ServletConfig config=getServletConfig();  
+	    String driver=config.getInitParameter("api");  
+		System.out.println(driver);
+
 		try {
 			output = dbOperation.customerSignup(cm);
 			System.out.println("insertok");
 			sendEmail email =new sendEmail();
-			email.sendSimpleMessage(uname, "Verification", "You have been under verification process we will let you know after yours approved");
+//			email.sendSimpleMessage(uname, "Verification", "You have been under verification process we will let you know after yours approved",driver);
 			
-			
+			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+			rd.forward(request, response);
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
