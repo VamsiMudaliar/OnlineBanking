@@ -38,7 +38,7 @@ public class Log_admin  extends HttpServlet{
 		if (UserName.equals("root") && password.equals("123")) {
 			System.out.println(UserName);
 
-			RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("Admin/index.jsp");
 			rd.forward(request, response);
 		}else {
 			System.out.println("Notvalid");

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="com.banking.Database.DbOperation"%>
+<%@page import="com.banking.Database.db_con"%>
+<%@page import="java.sql.*"%>
+
+<%@page import="com.banking.Model.CustomerModel"%>
+<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,34 +29,53 @@
                     </div>
                 </div>
             </div>
+            <%
+				Connection conn = null;
+				Statement stmt = null;
+				ResultSet rs = null;
+				%>
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Name <i class="fa fa-sort"></i></th>
-                        <th>Address</th>
-                        <th>City <i class="fa fa-sort"></i></th>
-                        <th>Pin Code</th>
-                        <th>Country <i class="fa fa-sort"></i></th>
-                        <th>Actions</th>
+                        
+                        <th>Username <i class="fa fa-sort"></i></th>
+                        <th>Is_verified <i class="fa fa-sort"></i></th>
+                        <th>Account_Number</th>
+                        <th>Operation</th>
+                      
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <%
+					try{
+					
+						db_con connect = new db_con();
+						conn = connect.getConnection();
+
+						stmt = conn.createStatement();
+
+						 rs = stmt.executeQuery("select * from customer");
+					while(rs.next()){
+					%>
                      
                     <tr>
-                        <td>5</td>
-                        <td>Martin Blank</td>
-                        <td>Via Monte Bianco 34</td>
-                        <td>Turin</td>
-                        <td>10100</td>
-                        <td>Italy</td>
+                        <td><%=rs.getString(1) %></td>
+                        <td><%=rs.getString(3) %></td>
+                        <td><%=rs.getString(4) %></td>
+
                         <td>
                             <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                             <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
-                    </tr>        
+                    </tr>  
+                    <%
+						}
+						conn.close();
+						} catch (Exception e) {
+						e.printStackTrace();
+						}
+						%>      
                 </tbody>
             </table>
            

@@ -57,17 +57,17 @@ public class Login_page extends HttpServlet {
 
 					cm.setAccount_number(rs.getString(4));
 				}
-				System.out.println(cm.getIs_verified());
+					System.out.println(cm.getIs_verified());
 
-				if (cm.getIs_verified()==0) {
-					request.setAttribute("isPassOK", "No");
-					RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
-					rd.forward(request, response);
-					
-				}
+			
 					
 					ResultSet rs1 = stmt.executeQuery("select * from bank_account where account_number ='" + cm.getAccount_number() + "'");
-
+					if (cm.getIs_verified()==0  || !rs.isBeforeFirst() ) {
+						request.setAttribute("isPassOK", "No");
+						RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+						rd.forward(request, response);
+						
+					}
 					while (rs1.next()) {
 						cm.setAmount(rs1.getInt(8));
 					}
