@@ -14,7 +14,7 @@ import java.util.Date;
 import com.banking.Model.*;
 public class DbOperation {
 	Connection conn;
-	int count1, count2,tcount;
+	int count1, count2,tcount,tbal,tacc=-1;
 
 	
 
@@ -29,7 +29,7 @@ public class DbOperation {
 			count1 = ps1.executeUpdate();
 			System.out.println("Inserted " + count1 + " row");
 				
-		
+	
 	}catch (Exception e) {
 		// TODO: handle exception
 		e.printStackTrace();
@@ -60,4 +60,34 @@ public class DbOperation {
 					}
 		
 	}
+	public boolean SearchAcc(String rAccNo) {
+		try {
+			db_con connect = new db_con();
+			conn = connect.getConnection();
+			System.out.println("Got connection");
+			PreparedStatement st = conn.prepareStatement("select * from bank_account where account_number =" +rAccNo+"");
+			tacc = st.executeUpdate();
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	if(tacc==-1) {
+			return false; 
+		}
+	return true;
+}
+	public int getBal(String username) {
+		try {
+			db_con connect = new db_con();
+			conn = connect.getConnection();
+			System.out.println("Got connection");
+			PreparedStatement st = conn.prepareStatement("select AMOUNT from bank_account where account_number in(select account_number from customer where username =" + username + "" );
+			tbal = st.executeUpdate();
+			System.out.println("bal is "+ tbal );
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return tbal;
+	}
+	
 }

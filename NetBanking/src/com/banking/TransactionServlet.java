@@ -36,6 +36,12 @@ public class TransactionServlet extends HttpServlet {
 		cm = (CustomerModel)session.getAttribute("userDetails");
 		String username = (String)cm.getUsername();
 		
+		DbOperation dbOperation = new DbOperation();
+		int Bal = dbOperation.getBal(username);
+		boolean RAcc = dbOperation.SearchAcc(rAccNo);
+		if(TAmount<=Bal && TAmount>0) {
+			if(RAcc) {
+		
 		// Generating transaction id
 		Random rand = new Random();
 		int random_num = 1000000 + rand.nextInt(9999999);
@@ -51,12 +57,12 @@ public class TransactionServlet extends HttpServlet {
 		tm.setAmount(TAmount);
 		tm.setDate(tdate);
 		tm.setRAccount_no(rAccNo);
-		tm.setStatus(false);
+		tm.setStatus(0);
 		tm.setTid(tid);
 		tm.setTtype(Ttype);
 		tm.setUser(username);
 		try {
-			DbOperation dbOperation = new DbOperation();
+		
 			output = dbOperation.insertTxnDetails(tm);
 			
 			}
@@ -83,4 +89,20 @@ public class TransactionServlet extends HttpServlet {
 			rd.forward(request, response);
 		}
 }
+			//if accNo is not present
+			else {
+				request.setAttribute("txnS", "false");
+				System.out.println("RAccNo not present");
+				RequestDispatcher rd = request.getRequestDispatcher("Transaction.jsp");
+				rd.forward(request, response);
+			}
+			}
+		//if amount is <0 or >bal
+		else {
+			request.setAttribute("txnS", "false1");
+			System.out.println("RAccNo not present");
+			RequestDispatcher rd = request.getRequestDispatcher("Transaction.jsp");
+			rd.forward(request, response);
+			}
+		}
 }

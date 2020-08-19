@@ -3,7 +3,7 @@ package com.banking.Model;
 public class TransactionModel {
 	int amount;
 	String tid,tdate,username,RaccNo,Ttype;
-	boolean t_status;
+	int t_status;
 	
 	public String getRAccount_no() {
 		return RaccNo;
@@ -42,11 +42,11 @@ public class TransactionModel {
 		this.amount = amount;
 		
 		}
-	public boolean getStatus() {
+	public int getStatus() {
 		return t_status;
 		}
 		
-	public void setStatus(boolean status) {
+	public void setStatus(int status) {
 		this.t_status = status;
 		}
 	public String getUser() {

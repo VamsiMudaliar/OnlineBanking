@@ -49,7 +49,12 @@
 								</div>
 								
 								<input type="submit" class="btn btn-lg btn-info">
-								 
+								 <% if((String)request.getAttribute("txnS")=="false") {%>
+								 alert("Acc no doesn't exist");
+								 <%} %>
+								  <% if((String)request.getAttribute("txnS")=="false1") {%>
+								 alert("Amount not acceptable");
+								 <%} %>
 								<% if((String)request.getAttribute("output") == "false"){
 									%>
 									alert("transaction failed!!! please do it again");
