@@ -38,9 +38,7 @@
 			<label><a href="index.jsp">Go To Home Page</a></label>
 		</div>
 		<!-- Footer start here -->
-		<div class="row" style="margin-top: 50px;">
-			<jsp:include page="footer.jsp"></jsp:include>
-		</div>
+		
 	</div>
 			</div>
 		</div>

@@ -11,9 +11,9 @@ public class db_con {
 
 	    try {
 	    	 Class.forName("com.mysql.cj.jdbc.Driver");
-	         connection = DriverManager.getConnection("jdbc:mysql://localhost/bank?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-//	       String url ="jdbc:mysql://banksystem123.mysql.database.azure.com:3306/bank?useSSL=true&requireSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
-//	       Connection connection = DriverManager.getConnection(url, "Adminuser@banksystem123", "Vikas12345");
+//	         connection = DriverManager.getConnection("jdbc:mysql://localhost/bank?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+	       String url ="jdbc:mysql://banksystem123.mysql.database.azure.com:3306/bank?useSSL=true&requireSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
+	       Connection connection = DriverManager.getConnection(url, "Adminuser@banksystem123", "Vikas12345");
 	    	 System.out.println("Connection successful");
 	      
 	    } catch (Exception e) {
