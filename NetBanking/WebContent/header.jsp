@@ -78,13 +78,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#index.html" class="scroll">home</a></li>
+							<li><a href="index.jsp" class="scroll">home</a></li>
 							<li><a href="#about" class="scroll">about</a></li>
-							<li><a href="#services" class="scroll">services</a></li>
-							<li><a href="#skills" class="scroll">skills</a></li>
-							<li><a href="#team" class="scroll">team</a></li>
-							<li><a href="#payment" class="scroll">payment</a></li>
-							<li><a href="#blog" class="scroll">blog</a></li>
+							<li><a href="Services.jsp" class="scroll">services</a></li>
+							
 							<li><a href="#contact" class="scroll">contact</a></li>
 						</ul>
 					</div>
