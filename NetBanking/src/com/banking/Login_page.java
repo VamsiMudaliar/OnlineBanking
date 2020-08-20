@@ -62,12 +62,14 @@ public class Login_page extends HttpServlet {
 			
 					
 					ResultSet rs1 = stmt.executeQuery("select * from bank_account where account_number ='" + cm.getAccount_number() + "'");
-					if (cm.getIs_verified()==0  || !rs.isBeforeFirst() ) {
+					if (cm.getIs_verified()==0  || !rs1.isBeforeFirst() ) {
 						request.setAttribute("isPassOK", "No");
 						RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
 						rd.forward(request, response);
+					
 						
 					}
+					else {
 					while (rs1.next()) {
 						cm.setAmount(rs1.getInt(8));
 					}
@@ -81,6 +83,7 @@ public class Login_page extends HttpServlet {
 					rd.forward(request, response);
 
 				}
+			}
 			
 
 		} catch (SQLException e) {
