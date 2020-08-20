@@ -4,7 +4,7 @@
 <html lang="en">
 <!-- Head -->
 <head>
-<title>Corporate Bank a Banking Category Bootstrap responsive Website Template | Home :: w3layouts</title>
+<title>Corporate Bank a Banking</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta name="keywords" content="Corporate Bank a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -38,10 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Body -->
 <body>
 	<div class="top-main">
-		<div class="number">
-			<h3><i class="fa fa-phone" aria-hidden="true"></i> +91 080 987 6541</h3>
-			<div class="clearfix"></div>
-		</div>
+		
 		<div class="social-icons">
 		<ul class="top-icons">
 			<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -51,13 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 		</ul>
 		<div class="form-top">
-		  <form action="#" method="post" class="navbar-form navbar-left">
-			<div class="form-group">
-				<input type="search" class="form-control" placeholder="Search">
-			</div>
-				<button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
-				<!-- <button type="submit" class="btn btn-default">Submit</button> -->
-			</form>
+		
 		</div>
 			<div class="clearfix"></div>
 		</div>
@@ -78,8 +69,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index.jsp" class="scroll">home</a></li>
-							<li><a href="#about" class="scroll">about</a></li>
+							<li><a href="index.jsp" >home</a></li>
+							<li><a href="about" class="scroll">about</a></li>
 							<li><a href="Services.jsp" class="scroll">services</a></li>
 							
 							<li><a href="#contact" class="scroll">contact</a></li>
