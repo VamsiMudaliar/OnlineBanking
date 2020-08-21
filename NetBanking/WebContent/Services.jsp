@@ -32,6 +32,8 @@
 						<!-- Button trigger modal -->
 						<button type="button" class="btn btn-primary"  style="cursor: pointer" data-toggle="modal" data-target="#exampleModalCenter">
  						 Check Account Balance</button>
+ 						 <br><br><br><br><br>
+ 						 <h5>Check your balance here!!!</h5>
  						 <!-- Modal -->
 							<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 							  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -86,30 +88,34 @@
 				<div class="clearfix"></div>
 			</div>
 			<div class="service-grid-bottom">
-				<div class="col-md-4 service-grid-1">
-					<div class="service-grid-text">
-						<div class="icon">
-							<i class="fa fa-money" aria-hidden="true"></i></div><br>
-						<a href="LoanApplication.jsp" class="btn btn-primary">Apply For Loan</a>
-						<p>Exciting offers on House and Personal Loans dolor est consequat lorem, eu condimentum tortor justo id lectus.</p>
-					</div>
-				</div>
-				<div class="col-md-4 service-grid-1">
+					<div class="col-md-4 service-grid-1">
 					<div class="service-grid-text">
 						<div class="icon">
 							<i class="fa fa-briefcase" aria-hidden="true"></i>
 						</div>
-						<h4>lorem ipsum</h4>
+						<br><br><br><br><br>
+						<h4>!!!Happy to help!!!</h4>
 						<p></p>
 					</div>
 				</div>
 				<div class="col-md-4 service-grid-1">
 					<div class="service-grid-text">
 						<div class="icon">
+							<i class="fa fa-money" aria-hidden="true"></i></div><br>
+						<a href="LoanApplication.jsp" class="btn btn-primary">Apply For Loan</a>
+						<br><br>
+						<p>Exciting offers on House ,car,student and personal loans .</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 service-grid-1">
+					<div class="service-grid-text">
+						<div class="icon">
 							<i class="fa fa-credit-card" aria-hidden="true"></i>
 						</div>
-						<h4>lorem ipsum</h4>
-						<p>Proin feugiat, lorem ut consequat pellentesque, dolor est consequat lorem, eu condimentum tortor justo id lectus.</p>
+						<br><br><br><br><br>
+						<h4>!!!Happy to help!!!</h4>
+						
 					</div>
 				</div>
 				<div class="clearfix"></div>
