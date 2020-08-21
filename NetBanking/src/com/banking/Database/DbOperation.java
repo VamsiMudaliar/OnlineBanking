@@ -136,23 +136,20 @@ public class DbOperation {
 		return tbal;
 	}
 
-	public boolean FetchLoanDetails(LoanModel model) throws Exception {
+	public void FetchLoanDetails(LoanModel model) throws Exception {
 		try {
 			db_con connect = new db_con();
 			conn = connect.getConnection();
 			System.out.println("Got connection");
 
 			PreparedStatement st = conn.prepareStatement("insert into loan(LOAN_AMT,LOAN_DURATION,TYPE_OF_LOAN,"
-					+ "INTEREST_RATE,LOAN_AMT_PAID,Username) values('" + model.getLoan_amt() + "','"
+					+ "INTEREST_RATE,LOAN_AMT_PAID,Is_VERIFIED,Username) values('" + model.getLoan_amt() + "','"
 					+ model.getLoan_duration() + "','" + model.getLoan_type() + "','" + model.getInterest_rate() + "','"
-					+ model.getLoan_amt_paid() + "','" + model.getUsername() + "')");
+					+ model.getLoan_amt_paid() + "','" + model.getIs_verified() + "','" + model.getUsername() + "')");
 			tcount = st.executeUpdate();
 			System.out.println("Inserted " + tcount + " row into Loan table");
-			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
-
-			return false;
 		}
 	}
 

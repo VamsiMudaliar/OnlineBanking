@@ -15,19 +15,16 @@
 <script type="text/javascript" src="js/passwordChecker.js"></script>
 </head>
 <body>
-
-<jsp:include page="header.jsp" />
-<br>
 <div class="col-lg-6 col-lg-offset-3">
 
 	<h1 class="text-center text-primary"><strong>Apply for Loan</strong></h1>
 
-<form action="/Loan" method="POST" class="form-group">
+<form action="Loan" method="POST" class="form-group">
 
 <br><br>
 <label for=" Type of Loan "><strong>Type of Loan</strong> </label>
 
-<select id="loantype" class="form-control" onchange="abc()">
+<select id="loantype" name="loan_type" class="form-control" onchange="abc()">
 	
 <option value="Personal_Loan"><strong>Please Select One</strong></option>	
 <option value="Personal_Loan"><strong>Personal Loan</strong></option>
@@ -39,11 +36,11 @@
 <br>
 
 <label for="Loan Amount"> Enter the Loan Amount :</label>
-<input type="text" class="form-control" id="loanamt" placeholder="Enter your loan Amount">
+<input type="text" class="form-control" id="loanamt" name="loan_amt" placeholder="Enter your loan Amount">
 <br>
 
 <label for=" Choose your Loan Duration"><strong>Choose Your Loan Duration :</strong></label>
-<select id="duration" class="form-control">
+<select id="duration" class="form-control" name="loan_dur">
 <option value=0 class="form-control">No months Selected</option>
 <option value=3 class="form-control">3 months</option>
 <option value=6 class="form-control">6 months</option>
@@ -53,7 +50,7 @@
 
 <br>
 <label for=" Choose your interest rate "><strong> Choose your interest rate :</strong></label>
-<select id="interest_rate" class="form-control" onchange="getInterest()">
+<select id="interest_rate" class="form-control" name="getInterest" onchange="gsw()">
 <option id="opt0" class="form-control">No Option Selected</option>
 </select>
 
@@ -87,7 +84,7 @@
 		console.log(str);
 		ase.innerHTML=str;
 	}
-	function getInterest(){
+	function gsw(){
 		let p=document.getElementById("loanamt").value;
 		let t=document.getElementById("duration").value;
 		let r=document.getElementById("interest_rate").value;
@@ -101,7 +98,7 @@
 			re.value="You will be charged "+w.toPrecision(4).toString()+" per month";
 		}
 		else{
-			re.value="select a valid option "
+			re.value="select a valid option ";
 		}
 
 

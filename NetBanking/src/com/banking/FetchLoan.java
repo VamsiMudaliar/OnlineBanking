@@ -25,15 +25,14 @@ public class FetchLoan extends HttpServlet {
 	Connection conn;
 	Statement stmt;
 	LoanModel lm = null;
-	boolean pass_wrong = false;
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		System.out.println("Im here ");
 		loan_type = request.getParameter("loan_type");
-		loan_dur = Float.parseFloat(request.getParameter("loan_duration"));
-		interest_rate = Float.parseFloat(request.getParameter("interest"));
+		loan_dur = Float.parseFloat(request.getParameter("loan_dur"));
+		interest_rate = Float.parseFloat(request.getParameter("getInterest"));
 		loan_amt = Float.parseFloat(request.getParameter("loan_amt"));
 
 		System.out.println(loan_type);
