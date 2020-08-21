@@ -122,8 +122,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="submit" class="btn btn-primary btn-lg"
 								value="Sign
 								to your account"></input>
-						</form>
-						<h5>*If you just created project.It might take some time for it to get Activated because Account will take time to get verfied by the bank</h5>
+						</form><br><br>
+						<h5>*If you just created Acconut.It might take some time for it to get Activated because Account will take time to get verfied by the bank</h5>
 					</div>
 				</div>
 			</div>
