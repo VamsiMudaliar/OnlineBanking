@@ -46,6 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			<li><a href="Logout.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 		</ul>
 		<div class="form-top">
 		
@@ -149,6 +150,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 		</div>
+
 
 <!-- contact -->
 <section class="contact" id="contact">

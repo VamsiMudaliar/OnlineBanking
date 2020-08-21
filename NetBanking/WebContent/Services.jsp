@@ -124,6 +124,7 @@
 <!-- //payment -->
 
 	
+
 <!-- contact -->
 <section class="contact" id="contact">
 	<div class="container">
@@ -147,4 +148,5 @@
 		</div>
 	</div>
 </section>
+
 			<jsp:include page="footer.jsp"></jsp:include>

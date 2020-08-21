@@ -46,6 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			<li><a href="Logout.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 		</ul>
 		<div class="form-top">
 		
@@ -126,11 +127,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <div>
  	<h5 align="center">*transaction status "0" means not yet conformed by bank "1" indicates Txn Success</h5> 
  	
- </div><br><br><br><br>
- <div>
-	<label align="right"><a href="Services.jsp">Go Back To Services</a></label>
  </div>
+ <br><br>
+	<label align="right"><a href="Services.jsp">Go Back To Services</a></label>
  
+ <br><br><br>
+
 <!-- contact -->
 <section class="contact" id="contact">
 	<div class="container">
