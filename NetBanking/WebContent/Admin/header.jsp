@@ -195,7 +195,7 @@ $(document).ready(function(){
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="Show_customers.jsp">Show Customer</a>
             <a class="collapse-item" href="cards.html">Show Loan Applicants </a>
-            <a class="collapse-item" href="cards.html">Show Transaction </a>
+            <a class="collapse-item" href="Show_txn.jsp">Show Transaction </a>
             
           </div>
         </div>
