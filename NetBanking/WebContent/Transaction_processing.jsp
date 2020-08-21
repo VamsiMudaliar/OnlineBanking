@@ -18,24 +18,27 @@
 					<strong>Your transfer operation is yet to be checked.</strong>
 				</p>
 				<p class="mb-0">
-				<%@ page import="com.banking.Model.*" %>
-				<%TransactionModel tm = new TransactionModel(); %>
+				<%@ page import="com.banking.*" %>
+				<%@page import="com.banking.Model.*" %>
+				<%TransactionModel tm = (TransactionModel)request.getAttribute("tm"); %>
 					<b>UserName: </b>
-					<%System.out.println(tm.getUser()); %>
+					<%=tm.getUser()%>
 					</p>
 				<p class="mb-0">
 					<b>Amount: </b>
-					<%System.out.println(tm.getAmount()); %>
+					<%=tm.getAmount() %>
 				</p><p class="mb-0">
 					<b>Reciever AccNo: </b>
-					<%System.out.println(tm.getRAccount_no()); %>
+					<%=tm.getRAccount_no() %>
 					<p class="mb-0">
 					<b>Txn ID: </b>
-					<%System.out.println(tm.getTid()); %>
+					<%=tm.getTid() %>
 				</p>
-				</p>
-			</div>
-			<label><a href="index.jsp">Go To Home Page</a></label>
+			
+			</div><br><br>
+		<div>
+			<label><a href="Services.jsp">Go To Services Page</a></label>
+		</div>
 		</div>
 		<!-- Footer start here -->
 		

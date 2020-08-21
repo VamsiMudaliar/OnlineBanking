@@ -65,13 +65,13 @@
 													<p>Proin feugiat, lorem ut consequat pellentesque, dolor est consequat lorem, eu condimentum tortor justo id lectus.</p>
 					</div>
 				</div>
-				<div class="col-md-4 service-grid-1">
+			<div class="col-md-4 service-grid-1">
 					<div class="service-grid-text">
 						<div class="icon">
 							<i class="fa fa-money" aria-hidden="true"></i>
 						</div>
-						<h4>lorem ipsum</h4>
-						<p>Proin feugiat, lorem ut consequat pellentesque, dolor est consequat lorem, eu condimentum tortor justo id lectus.</p>
+						<h4>Transfer Money</h4><br><br><br><br>
+						<label><a href="Transaction.jsp">Click here</a></label>
 					</div>
 				</div>
 				<div class="col-md-4 service-grid-1">
@@ -79,8 +79,8 @@
 						<div class="icon">
 							<i class="fa fa-university" aria-hidden="true"></i>
 						</div>
-						<h4>lorem ipsum</h4>
-						<p>Proin feugiat, lorem ut consequat pellentesque, dolor est consequat lorem, eu condimentum tortor justo id lectus.</p>
+						<h4>Transaction History</h4><br><br><br><br>
+						<label><a href="TxnDetail.jsp">Click Here</a></label>
 					</div>
 				</div>
 				<div class="clearfix"></div>

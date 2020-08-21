@@ -40,6 +40,12 @@
 											</select>
 										</div>
 									</div>
+									<div class="col-sm-6 form-group">
+										<label class="required">Enter IFSC of Reciever<span class="text-muted"><em><span
+											style="color: red; font-size: 14px">*</span></label> <input type="text"
+											placeholder="Enter ifsc" class="form-control"
+											name="ifsc" required>
+									</div>
 								</div>
 								
 								<div class="form-group">
@@ -47,10 +53,10 @@
 											style="color: red; font-size: 14px">*</span> Indicates
 											required field</em> </span>
 								</div>
-								
+								<div>
 								<input type="submit" class="btn btn-lg btn-info">
 								 <% if((String)request.getAttribute("txnS")=="false") {%>
-								 alert("Acc no doesn't exist");
+								 alert("Acc No doesn't exist or ifsc code is Wrong");
 								 <%} %>
 								  <% if((String)request.getAttribute("txnS")=="false1") {%>
 								 alert("Amount not acceptable");
@@ -59,6 +65,7 @@
 									%>
 									alert("transaction failed!!! please do it again");
 									<%} %>
+							</div>
 							</div>
 						</form>
 					</div>

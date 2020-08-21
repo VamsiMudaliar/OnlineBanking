@@ -21,26 +21,32 @@ import com.banking.Model.*;
 public class TransactionServlet extends HttpServlet {
 	int TAmount;
 	boolean output;
-	String tid,rAccNo,Ttype;
+	String tid,rAccNo,Ttype,ifsc;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException,NullPointerException {
 		PrintWriter out = response.getWriter();
 		
-		rAccNo = request.getParameter("rAccNo");
-		Ttype = request.getParameter("Ttype");
+		rAccNo = (String)request.getParameter("rAccNo");
+		Ttype = (String)request.getParameter("Ttype");
 		TAmount = Integer.parseInt(request.getParameter("Amount"));
-		
+		ifsc = (String)request.getParameter("ifsc");
+		System.out.println("  " + rAccNo+ Ttype);
 		//getting username
 		HttpSession session = request.getSession();
 		CustomerModel cm = null;
 		cm = (CustomerModel)session.getAttribute("userDetails");
 		String username = (String)cm.getUsername();
+		System.out.println("  " + username);
+		
 		
 		DbOperation dbOperation = new DbOperation();
-		int Bal = dbOperation.getBal(username);
+		int Bal = cm.getAmount();
 		boolean RAcc = dbOperation.SearchAcc(rAccNo);
+		System.out.println(RAcc+ " ");
+		String ifscDB = dbOperation.SearchIfsc(rAccNo);
+		System.out.println(ifscDB+ " "+ifsc);
 		if(TAmount<=Bal && TAmount>0) {
-			if(RAcc) {
+			if(ifscDB.equals(ifsc) && RAcc) {
 		
 		// Generating transaction id
 		Random rand = new Random();
@@ -49,7 +55,7 @@ public class TransactionServlet extends HttpServlet {
 		System.out.println(tid);
 
 		//Getting Current date
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
 		String tdate = df.format(new Date());
 		
 		// Setting all variables to model class
@@ -81,7 +87,9 @@ public class TransactionServlet extends HttpServlet {
 		}
 		request.setAttribute("output",op);
 		if(output==true) {
-			System.out.println("txn processed");
+			int t= dbOperation.TransferMoney(rAccNo,Bal,TAmount,username);
+			System.out.println("txn processed"+t);
+			request.setAttribute("tm",tm);
 			 RequestDispatcher rd = request.getRequestDispatcher("Transaction_processing.jsp");
 				rd.forward(request, response);
 		}else {
@@ -100,7 +108,7 @@ public class TransactionServlet extends HttpServlet {
 		//if amount is <0 or >bal
 		else {
 			request.setAttribute("txnS", "false1");
-			System.out.println("RAccNo not present");
+			System.out.println("Amount not present");
 			RequestDispatcher rd = request.getRequestDispatcher("Transaction.jsp");
 			rd.forward(request, response);
 			}
