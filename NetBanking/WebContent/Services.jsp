@@ -62,7 +62,7 @@
 							    </div>
 							  </div>
 							</div>
-													<p>Proin feugiat, lorem ut consequat pellentesque, dolor est consequat lorem, eu condimentum tortor justo id lectus.</p>
+													
 					</div>
 				</div>
 			<div class="col-md-4 service-grid-1">

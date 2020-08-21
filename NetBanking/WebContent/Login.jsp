@@ -123,6 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								value="Sign
 								to your account"></input>
 						</form>
+						<h5>*If you just created project.It might take some time for it to get Activated because Account will take time to get verfied by the bank</h5>
 					</div>
 				</div>
 			</div>

@@ -6,7 +6,7 @@
 <html lang="en">
 <!-- Head -->
 <head>
-<title>Corporate Bank a Banking Category Bootstrap responsive Website Template | Home :: w3layouts</title>
+<title>Corporate Bank </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta name="keywords" content="Corporate Bank a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -51,6 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				<li><a href="index.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 		</ul>
 		<div class="form-top">
 		  <form action="#" method="post" class="navbar-form navbar-left">
@@ -146,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="main-icon">
 									<i class="fa fa-share" aria-hidden="true"></i>
 								</div>
-								<p>Etiam felis tellus, interdum in fringilla ac, imperdiet sed mi.</p>	
+								<p>Once you created your Account it takes a day to get Activated!!</p>	
 							<div class="clearfix"></div>
 							</div>
 					</div>
@@ -166,9 +167,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<img src="images/1.jpg" alt="" />
 		</div>
 		<div class="col-md-6 about-right">
-			<h3>Proin feugiat, lorem ut consequat pellentesque, dolor est consequat lorem, eu condimentum tortor justo id lectus.</h3>
-			<p>Phasellus lorem enim, aliquet vitae pharetra a, vehicula sed risus. Suspendisse rhoncus, ligula ut bibendum imperdiet, nibh lectus gravida lorem, at tristique eros turpis in tortor.</p>
-			<p>Phasellus lorem enim, aliquet vitae pharetra a, vehicula sed risus. Suspendisse rhoncus, ligula ut bibendum imperdiet, nibh lectus gravida lorem, at tristique eros turpis in tortor.</p>
+			<h3>Corporation Bank was a public-sector banking company headquartered in Mangalore, India. 
+				<p>The bank had a pan-Indian presence. Presently, the bank has a network of 2,432</p>
+			 <p>fully automated CBS branches, 3,040 ATMs, and 4,724 branchless banking units across the country</p></h3>
 			<div class="more">
 				<a href="#" data-toggle="modal" data-target="#myModal">Read More</a>
 			</div>
