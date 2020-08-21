@@ -1,7 +1,3 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.bank.Database.db_con"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="com.bank.database.DatabaseOperations"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,13 +14,6 @@
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<%
-		DatabaseOperations operations = new DatabaseOperations();
-		JDBC_Connect connect = new JDBC_Connect();
-		Connection conn = connect.getConnection();
-		ArrayList<LoanModel> loadList = operations.getLoanList(conn);
-	%>
-
 	<div class="row">
 		<jsp:include page="header.jsp" />
 	</div>
@@ -48,20 +37,18 @@
 							<th>Delete</th>
 						</thead>
 						<tbody>
-							<%
-								for (LoanModel l : loadList) {
-							%>
+							
 							<tr>
-								<td><%=l.getFirst_name()%></td>
-								<td><%=l.getLast_name()%></td>
-								<td><%=l.getAccount_no()%></td>
-								<td><%=l.getAddress()%></td>
-								<td><%=l.getEmail()%></td>
-								<td><%=l.getLoan_amount()%></td>
+								<td>\</td>
+								<td>\</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 								<td><p data-placement="top" data-toggle="tooltip"
 										title="Approve">
 										<a
-											href="loan_request_process.jsp?account_no=<%=l.getAccount_no()%>&amount=<%=l.getLoan_amount()%>"><button
+											href="loan_request_process.jsp?account_no=&amount=\"><button
 												class="btn btn-primary btn-sm" data-title="Approve"
 												data-toggle="modal" data-target="#edit">
 												<span class="glyphicon glyphicon-ok"></span>
@@ -75,10 +62,7 @@
 										</button>
 									</p></td>
 							</tr>
-							<%
-								}
-							%>
-
+							
 						</tbody>
 
 					</table>

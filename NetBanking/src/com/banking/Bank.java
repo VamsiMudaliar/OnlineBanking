@@ -1,38 +1,26 @@
 package com.banking;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.io.File;
+import java.net.http.HttpResponse;
 
-import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+
 public class Bank {
 	public static JsonNode sendSimpleMessage() throws UnirestException {
 
-        HttpResponse<JsonNode> request = Unirest.post("https://api.mailgun.net/v3/" +"vikas.social" + "/messages")
-                .basicAuth("api", "b42e705fefbd678677915de739350d9e-203ef6d0-bf189071")
-                .field("from", "Excited User <USER@vikas.social.COM>")
-                .field("to", "8466vikas@gmail.com")
-                .field("subject", "hello")
-                .field("text", "testing")
-                .asJson();
+		HttpResponse<JsonNode> request = Unirest.post("https://api.mailgun.net/v3/" + "vikas.social" + "/messages")
+				.basicAuth("api", "b42e705fefbd678677915de739350d9e-203ef6d0-bf189071")
+				.field("from", "Excited User <USER@vikas.social.COM>").field("to", "8466vikas@gmail.com")
+				.field("subject", "hello").field("text", "testing").asJson();
 
-            return request.getBody();
-    }
+		return request.getBody();
+	}
+
 	public static void main(String[] args) throws UnirestException {
-		
 
-
-	
-
-		
-
-		    
-		    JsonNode res=sendSimpleMessage();
-		    System.out.println(res);
+		JsonNode res = sendSimpleMessage();
+		System.out.println(res);
 
 //    try {
 //    	 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -51,7 +39,7 @@ public class Bank {
 //    } catch (Exception e) {
 //       System.err.println(e);
 //    }
-  }
+	}
 //	class.forName("com.mysql.jdbc.Driver");
 //	Connection conn = null;
 //	conn = DriverManager.getConnection("jdbc:mysql://localhost/test","root", "");

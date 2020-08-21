@@ -1,29 +1,24 @@
 package com.banking;
-import java.io.*;  
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-import com.sun.xml.internal.ws.message.EmptyMessageImpl;
+
 import com.banking.Database.DbOperation;
-import com.banking.Model.AccountModel;
+import com.banking.Email.sendEmail;
 import com.banking.Model.CustomerModel;
-import com.banking.Email.*;
+
 @WebServlet("/Register")
 public class CustomerReg extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		System.out.println("called");
 
@@ -43,17 +38,17 @@ public class CustomerReg extends HttpServlet {
 		boolean output;
 //		request.setAttribute("Account_details", am);
 		DbOperation dbOperation = new DbOperation();
-	    ServletConfig config=getServletConfig();  
-	    String driver=config.getInitParameter("api");  
+		ServletConfig config = getServletConfig();
+		String driver = config.getInitParameter("api");
 		System.out.println(driver);
 
 		try {
-			//insertting into cusstomer Table by instatnatiating Db operation class
+			// insertting into cusstomer Table by instatnatiating Db operation class
 			output = dbOperation.customerSignup(cm);
 //			System.out.println("insertok");
-			sendEmail email =new sendEmail();
+			sendEmail email = new sendEmail();
 //			email.sendSimpleMessage(uname, "Verification", "You have been under verification process we will let you know after yours approved",driver);
-			//Go to login Page
+			// Go to login Page
 			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
 			rd.forward(request, response);
 
@@ -63,5 +58,5 @@ public class CustomerReg extends HttpServlet {
 
 			e.printStackTrace();
 		}
-}
+	}
 }

@@ -89,9 +89,9 @@
 				<div class="col-md-4 service-grid-1">
 					<div class="service-grid-text">
 						<div class="icon">
-							<i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-						<h4>lorem ipsum</h4>
-						<p>Proin feugiat, lorem ut consequat pellentesque, dolor est consequat lorem, eu condimentum tortor justo id lectus.</p>
+							<i class="fa fa-money" aria-hidden="true"></i></div>
+						<a href="LoanApplication.jsp" class="btn btn-primary">Apply For Loan</a>
+						<p>Exciting offers on House and Personal Loans dolor est consequat lorem, eu condimentum tortor justo id lectus.</p>
 					</div>
 				</div>
 				<div class="col-md-4 service-grid-1">

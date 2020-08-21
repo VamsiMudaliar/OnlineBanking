@@ -15,11 +15,14 @@
 <script type="text/javascript" src="js/passwordChecker.js"></script>
 </head>
 <body>
+
+<jsp:include page="header.jsp" />
+<br>
 <div class="col-lg-6 col-lg-offset-3">
 
 	<h1 class="text-center text-primary"><strong>Apply for Loan</strong></h1>
 
-<form action="/loan_apply" method="POST" class="form-group">
+<form action="/Loan" method="POST" class="form-group">
 
 <br><br>
 <label for=" Type of Loan "><strong>Type of Loan</strong> </label>
