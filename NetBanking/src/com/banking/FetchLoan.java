@@ -25,7 +25,7 @@ public class FetchLoan extends HttpServlet {
 	Connection conn;
 	Statement stmt;
 	LoanModel lm = null;
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
@@ -55,7 +55,7 @@ public class FetchLoan extends HttpServlet {
 		lm.setUsername(username);
 		try {
 			dbOperation.FetchLoanDetails(lm);
-			RequestDispatcher rd = request.getRequestDispatcher("LoanApplication.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("Services.jsp");
 			rd.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
