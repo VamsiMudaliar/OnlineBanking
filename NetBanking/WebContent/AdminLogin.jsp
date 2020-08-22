@@ -33,7 +33,7 @@ color: red;
 						</div>
 
 						<div class="panel-body" style="background-color:cyan">
-							<form role="form" action="Adminlogin" method="post">
+							<form role="form" action="Admin" method="post">
 							<div class="space" style="margin-top:20px"></div>
 								<!-- <div class="alert alert-danger">Incorrect Username or
 									Password!</div> -->

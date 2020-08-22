@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import com.banking.Database.db_con;
 import com.banking.Model.CustomerModel;
-@WebServlet("/Adminlogin")
+@WebServlet("/Admin")
 public class Log_admin  extends HttpServlet{
 
 	
