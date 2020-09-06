@@ -12,10 +12,7 @@
     <servlet>  
    <servlet-name>DemoServlet</servlet-name>  
 <servlet-class>DemoServlet</servlet-class>  
-    <init-param>
-      <param-name>api</param-name>  
-      <param-value>"b309d1a06cbe14aef0e2405a192c13bb-203ef6d0-5100c74b"</param-value>  
-    </init-param>  
+     
     
   </servlet>
 </web-app>
