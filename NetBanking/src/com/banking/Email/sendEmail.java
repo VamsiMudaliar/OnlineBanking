@@ -6,7 +6,6 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 public class sendEmail {
-	 private final static String key="b309d1a06cbe14aef0e2405a192c13bb-203ef6d0-5100c74b";
 
 	public  JsonNode sendSimpleMessage( String tomail,String Subject,String msg,String key) throws UnirestException {
 		
